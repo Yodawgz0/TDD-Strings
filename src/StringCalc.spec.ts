@@ -49,4 +49,9 @@ describe("StringCalc", () => {
     expect(strcalc.add("1, 1001")).toBe(1);
     expect(strcalc.add("//#\n2#1010#4")).toBe(6);
   });
+
+  // Test 9
+  it("should ignore numbers above 1000 for addition", () => {
+    expect(strcalc.add("//***\n1***2***3")).toBe(6);
+  });
 });
