@@ -1,4 +1,4 @@
-// Creating the function add to process the information and setting the input as the string
+// Creating the class StringCalc to process the information and setting the input as the string
 
 export class StringCalc {
   add = (numberStr: string) => {
@@ -7,9 +7,8 @@ export class StringCalc {
     try {
       // This will take care of the empty string
       if (!numberStr) return 0;
-
-      let defaultDelimiter = ",";
-      // Splitting the array using the defaultDelimiter
+      // Splitting the array using the defaultDelimiter , and adding \n both
+      let defaultDelimiter = /[,|\n]/;
       const numArr = numberStr.split(defaultDelimiter);
       // Parse the single number from the string
       // and reducing it to the added sum and returning it
@@ -18,7 +17,6 @@ export class StringCalc {
         .reduce((sum, num) => sum + num, 0);
       return numberParsedAdded;
     } catch (err) {
-      console.log(err);
       return "Unable to extract the number out of the string";
     }
   };

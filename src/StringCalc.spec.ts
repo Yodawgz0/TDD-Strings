@@ -20,4 +20,14 @@ describe("StringCalc", () => {
   it("should return the sum of two comma-separated numbers", () => {
     expect(strcalc.add("8,2")).toBe(10);
   });
+
+  // Test 4
+  it("should handle an arbitrary number of numbers", () => {
+    expect(strcalc.add("17,2,3,5")).toBe(27);
+  });
+
+  // Test 5
+  it("should handle new lines as delimiters", () => {
+    expect(strcalc.add("1\n2,3")).toBe(6);
+  });
 });
