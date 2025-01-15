@@ -12,7 +12,7 @@ const add = (numberStr: string) => {
 }
 
 // input data defined
-const inputString = "1"
+const inputString: number = "1"
 
 // Calling the function
 const processedData = add(inputString)
