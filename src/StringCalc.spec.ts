@@ -51,7 +51,8 @@ describe("StringCalc", () => {
   });
 
   // Test 9
-  it("should ignore numbers above 1000 for addition", () => {
+  it("should consider n length of the delimiter and provide with sum", () => {
     expect(strcalc.add("//***\n1***2***3")).toBe(6);
+    expect(strcalc.add("//%%%\n1%%%2%%%3")).toBe(6);
   });
 });
