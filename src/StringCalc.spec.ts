@@ -60,4 +60,13 @@ describe("StringCalc", () => {
    it("should consider different delimiters and add", () => {
     expect(strcalc.add("//*&%\n1*2%3&1")).toBe(7);
   });
+
+   // Test 11
+   it("should consider different delimiters and add", () => {
+    expect(strcalc.add("//*&&&&%\n1*2%3&&&&1")).toBe(7);
+    // im not sure about this one but i feel %%% and %%%% i have considered 
+    // here to work with , i am concentrating on % sign but 
+    // it does makes sense to have 4 length as the delimiter
+    expect(strcalc.add("//*&&&&%%%%\n1*2%%%3&&&&1")).toBe(7);
+  });
 });

@@ -8,7 +8,10 @@ export class StringCalc {
     let defaultDelimiter = ",";
     if (numberStr.startsWith("//")) {
       const indexOfNextLn = numberStr.indexOf('\n');
+      // i thought of considering the the whole area to be as delimiters
+      // which i can use this as forward item
       defaultDelimiter = numberStr.slice(2, indexOfNextLn);
+      // removing the forward slashes
       numberStr =  numberStr.slice(2);
     }
 
