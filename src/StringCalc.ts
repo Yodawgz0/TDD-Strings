@@ -23,7 +23,7 @@ export class StringCalc {
 
     //  reducing it to the added sum and returning it
     const numberParsedAdded = numberParsedArr.reduce(
-      (sum, num) => sum + num,
+      (sum, num) => (num > 1000 ? sum : sum + num),
       0,
     );
     return numberParsedAdded;

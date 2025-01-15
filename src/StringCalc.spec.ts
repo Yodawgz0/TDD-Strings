@@ -43,4 +43,10 @@ describe("StringCalc", () => {
       "Negative numbers not allowed: -2, -4",
     );
   });
+
+  // Test 8
+  it("should ignore numbers above 1000 for addition", () => {
+    expect(strcalc.add("1, 1001")).toBe(1);
+    expect(strcalc.add("//#\n2#1010#4")).toBe(6);
+  });
 });
