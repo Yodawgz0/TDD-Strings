@@ -30,4 +30,17 @@ describe("StringCalc", () => {
   it("should handle new lines as delimiters", () => {
     expect(strcalc.add("1\n2,3")).toBe(6);
   });
+
+  // Test 6
+  it("should support custom delimiters", () => {
+    expect(strcalc.add("//;\n1;2")).toBe(3);
+    expect(strcalc.add("//#\n2#3#4")).toBe(9);
+  });
+
+  // Test 7
+  it("should throw an exception for negative numbers", () => {
+    expect(() => strcalc.add("1,-2,3,-4")).toThrow(
+      "Negative numbers not allowed: -2, -4",
+    );
+  });
 });
