@@ -7,7 +7,9 @@ export class StringCalc {
     // Check for custom delimiter
     let defaultDelimiter = ",";
     if (numberStr.startsWith("//")) {
-      [defaultDelimiter, numberStr] = [numberStr[2], numberStr.slice(2)];
+      const indexOfNextLn = numberStr.indexOf('\n');
+      defaultDelimiter = numberStr.slice(2, indexOfNextLn);
+      numberStr =  numberStr.slice(2);
     }
 
     // Splitting the array using the defaultDelimiter , and adding \n both

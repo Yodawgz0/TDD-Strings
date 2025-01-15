@@ -55,4 +55,9 @@ describe("StringCalc", () => {
     expect(strcalc.add("//***\n1***2***3")).toBe(6);
     expect(strcalc.add("//%%%%%%\n1%%%%%%2%%%%%%3")).toBe(6);
   });
+
+   // Test 10
+   it("should consider different delimiters and add", () => {
+    expect(strcalc.add("//*&%\n1*2%3&1")).toBe(7);
+  });
 });
