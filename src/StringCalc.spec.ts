@@ -9,9 +9,15 @@ describe("StringCalc", () => {
   it("should return 0 for an empty string", () => {
     expect(strcalc.add("")).toBe(0);
   });
+
   // Test 1
   it("should return the number itself if the string contains one number", () => {
     expect(strcalc.add("1")).toBe(1);
     expect(strcalc.add("5")).toBe(5);
+  });
+
+  // Test 3
+  it("should return the sum of two comma-separated numbers", () => {
+    expect(strcalc.add("8,2")).toBe(10);
   });
 });
